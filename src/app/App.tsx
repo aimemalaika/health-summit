@@ -222,7 +222,7 @@ export default function App() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <span className="text-sm text-gray-400">Africa-Europe Health R&D Summit</span>
-            <p className="text-sm text-gray-500">© 2025 Africa-Europe Health R&D Summit. All rights reserved.</p>
+            <p className="text-sm text-gray-500">© 2026 Africa-Europe Health R&D Summit. All rights reserved.</p>
           </div>
         </div>
       </footer>
