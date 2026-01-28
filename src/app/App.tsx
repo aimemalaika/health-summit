@@ -9,9 +9,9 @@ export default function App() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // Countdown to November 1, 2026
+  // Countdown to December 1, 2026
   useEffect(() => {
-    const targetDate = new Date('2026-11-01T00:00:00').getTime();
+    const targetDate = new Date('2026-12-01T00:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
@@ -76,9 +76,9 @@ export default function App() {
   };
 
   return (
-    <div className="h-screen bg-[#0a0a0f] text-white flex flex-col overflow-hidden">
+    <div className="min-h-screen bg-[#0a0a0f] text-white flex flex-col overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex-1 relative overflow-hidden flex items-center">
+      <section className="flex-1 relative flex items-center py-20 lg:py-16">
         {/* Background Image - Full Screen */}
         <div className="absolute inset-0 w-full h-full">
           <ImageWithFallback 
@@ -92,69 +92,68 @@ export default function App() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8 w-full relative z-10">
           <div className="grid lg:grid-cols-1 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-6 bg-[#0a0a0f]/40 backdrop-blur-xl p-8 rounded-2xl border border-white/10 shadow-2xl lg:w-[70%]">
-              <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8C42] via-[#FFB88C] to-[#FF8C42] leading-[1.15] tracking-tight drop-shadow-[0_0_30px_rgba(255,140,66,0.5)]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+            <div className="space-y-4 lg:space-y-6 bg-[#0a0a0f]/40 backdrop-blur-xl p-6 lg:p-8 rounded-2xl border border-white/10 shadow-2xl lg:w-[70%]">
+              <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#FF8C42] via-[#FFB88C] to-[#FF8C42] leading-[1.1] tracking-tight drop-shadow-[0_0_30px_rgba(255,140,66,0.5)]" style={{ fontSize: 'clamp(1.75rem, 4vw, 4rem)' }}>
                 AFRICA-EUROPE<br />
                 HEALTH R&D<br />
                 SUMMIT
               </h1>
               
-              <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+              <p className="text-gray-300 text-base lg:text-lg leading-relaxed max-w-xl">
                 Exploring an Africa-Europe Health R&D ecosystem: A concept for enhanced collaboration and innovation
               </p>
 
               {/* Event Details */}
-              <div className="flex flex-wrap gap-4 text-sm">
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                  <svg className="w-5 h-5 text-[#FF8C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex flex-wrap gap-2 lg:gap-4 text-sm">
+                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 lg:px-4 py-1.5 lg:py-2 rounded-lg border border-white/10">
+                  <svg className="w-4 h-4 lg:w-5 lg:h-5 text-[#FF8C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <span className="text-gray-300">Morocco</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10">
-                  <svg className="w-5 h-5 text-[#FF8C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center gap-2 bg-white/5 backdrop-blur-sm px-3 lg:px-4 py-1.5 lg:py-2 rounded-lg border border-white/10">
+                  <svg className="w-4 h-4 lg:w-5 lg:h-5 text-[#FF8C42]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span className="text-gray-300">November 2026</span>
+                  <span className="text-gray-300">December 2026</span>
                 </div>
               </div>
 
               {/* Countdown */}
-              <div className="flex gap-3 text-center">
+              <div className="flex flex-wrap gap-2 lg:gap-3 text-center">
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
                   { value: timeLeft.minutes, label: 'Min' },
                   { value: timeLeft.seconds, label: 'Sec' },
                 ].map((item) => (
-                  <div key={item.label} className="bg-white/5 backdrop-blur-sm px-4 py-3 rounded-lg border border-white/10 min-w-[60px]">
-                    <div className="text-2xl font-bold text-[#FF8C42]">{item.value.toString().padStart(2, '0')}</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wider">{item.label}</div>
+                  <div key={item.label} className="bg-white/5 backdrop-blur-sm px-3 lg:px-4 py-2 lg:py-3 rounded-lg border border-white/10 min-w-[50px] lg:min-w-[60px]">
+                    <div className="text-xl lg:text-2xl font-bold text-[#FF8C42]">{item.value.toString().padStart(2, '0')}</div>
+                    <div className="text-[10px] lg:text-xs text-gray-400 uppercase tracking-wider">{item.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4 items-center">
-                <button 
-                  className="px-8 py-3.5 bg-[#FF8C42]/20 hover:bg-[#FF8C42]/30 backdrop-blur-md text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#FF8C42]/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FF8C42] focus:ring-offset-2 focus:ring-offset-transparent border border-[#FF8C42]/50"
+                <button
+                  className="px-6 lg:px-8 py-3 lg:py-3.5 bg-[#FF8C42]/20 hover:bg-[#FF8C42]/30 backdrop-blur-md text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#FF8C42]/30 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#FF8C42] focus:ring-offset-2 focus:ring-offset-transparent border border-[#FF8C42]/50 text-sm lg:text-base"
                   aria-label="Get in touch with the summit organizers"
                   onClick={() => setIsModalOpen(true)}
                 >
                   Get in Touch
                 </button>
-                
               </div>
 
               {/* Coming Soon Teaser */}
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex items-center gap-2 lg:gap-3 pt-1 lg:pt-2">
                 <div className="flex gap-1">
-                  <span className="w-2 h-2 bg-[#FF8C42] rounded-full animate-pulse"></span>
-                  <span className="w-2 h-2 bg-[#FF8C42]/60 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></span>
-                  <span className="w-2 h-2 bg-[#FF8C42]/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></span>
+                  <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#FF8C42] rounded-full animate-pulse"></span>
+                  <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#FF8C42]/60 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></span>
+                  <span className="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-[#FF8C42]/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></span>
                 </div>
-                <p className="text-gray-400 text-sm italic">
+                <p className="text-gray-400 text-xs lg:text-sm italic">
                   Stay tuned — speakers, agenda & registration coming soon
                 </p>
               </div>
@@ -276,11 +275,11 @@ export default function App() {
       )}
 
       {/* Footer */}
-      <footer className="py-6 border-t border-white/10 mt-auto bg-[#0a0a0f]/40 backdrop-blur-lg">
+      <footer className="py-4 lg:py-6 border-t border-white/10 mt-auto bg-[#0a0a0f]/40 backdrop-blur-lg">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-            <span className="text-sm text-gray-400">Africa-Europe Health R&D Summit</span>
-            <p className="text-sm text-gray-500">© 2026 Africa-Europe Health R&D Summit. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-1 lg:gap-2">
+            <span className="text-xs lg:text-sm text-gray-400">Africa-Europe Health R&D Summit</span>
+            <p className="text-xs lg:text-sm text-gray-500">© 2026 Africa-Europe Health R&D Summit. All rights reserved.</p>
           </div>
         </div>
       </footer>
