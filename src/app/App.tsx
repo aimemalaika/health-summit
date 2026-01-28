@@ -145,16 +145,18 @@ export default function App() {
                   Get in Touch
                 </button>
                 
-                {/* Badge */}
-                <div className="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-full flex items-center gap-2 shadow-xl border border-white/20 ml-auto">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#FF8C42] to-[#FF6B35] flex items-center justify-center text-xs font-bold text-white shadow-lg">
-                    AE
-                  </div>
-                  <div className="text-xs font-semibold text-white">
-                    AFRICA-EUROPE<br />
-                    HEALTH RESEARCH SUMMIT
-                  </div>
+              </div>
+
+              {/* Coming Soon Teaser */}
+              <div className="flex items-center gap-3 pt-2">
+                <div className="flex gap-1">
+                  <span className="w-2 h-2 bg-[#FF8C42] rounded-full animate-pulse"></span>
+                  <span className="w-2 h-2 bg-[#FF8C42]/60 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></span>
+                  <span className="w-2 h-2 bg-[#FF8C42]/30 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></span>
                 </div>
+                <p className="text-gray-400 text-sm italic">
+                  Stay tuned — speakers, agenda & registration coming soon
+                </p>
               </div>
             </div>
 
