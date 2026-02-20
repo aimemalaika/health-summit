@@ -1,7 +1,6 @@
-import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
-import heroImage from '@/assets/3e1b8c5057f8ee51803533b2cd0c5e557313e19d.png';
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import heroImage from '@/assets/3e1b8c5057f8ee51803533b2cd0c5e557313e19d.png';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -100,7 +99,7 @@ export default function App() {
               </h1>
               
               <p className="text-gray-300 text-base lg:text-lg leading-relaxed max-w-xl">
-                Exploring an Africa-Europe Health R&D ecosystem: A concept for enhanced collaboration and innovation
+                A strategic platform to turn Health R&D into real-world impact
               </p>
 
               {/* Event Details */}
